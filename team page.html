@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #dad7cd;
+        }
+        header {
+            background: #344e41;
+            color: white;
+            padding: 5px;
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 15px;
+            display: inline-block;
+            transition: background 0.3s;
+        }
+        nav ul li a:hover {
+            background: #1b2b23;
+            border-radius: 5px;
+        }
+
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+        .team-members {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .member {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 200px;
+        }
+        .member img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        h2 {
+            color: #333;
+        }
+        .values {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            margin: 20px auto;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #344e41;
+            color: white;
+            margin-top: 20px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="home page.html">Home</a></li>
+                <li><a href="product page.html">Product</a></li>
+                <li><a href="pricing page.html">Pricing</a></li>
+                <li><a href="team page.html">Team</a></li>
+            </ul>
+        </nav>
+        <h1>Our Team</h1>
+        <p>Learn more about our employees and company values.</p>
+    </header>
+    <main>
+        <section>
+            <h2>Team Members</h2>
+            <div class="team-members" id="team-members">
+                <!-- Team members will be added here -->
+            </div>
+        </section>
+        <section class="values">
+            <h2>Our Company's Values</h2>
+            <ul id="core-values">
+                <!-- Company values will be added here -->
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Our Website. All rights reserved.</p>
+    </footer>
+    <script>
+        fetch('employees.json')
+            .then(response => response.json())
+            .then(data => {
+                const teamMembers = document.getElementById('team-members');
+                const coreValues = document.getElementById('core-values');
+
+                data.employees.forEach(employee => {
+                    const member = document.createElement('div');
+                    member.className = 'member';
+                    member.innerHTML = `
+                        <img src="${employee.image}" alt="${employee.name}">
+                        <h3>${employee.name}</h3>
+                        <p>${employee.title}</p>
+                        <p>${employee.description}</p>
+                    `;
+                    teamMembers.appendChild(member);
+                });
+
+                data.coreValues.forEach(value => {
+                    const li = document.createElement('li');
+                    li.textContent = value.value;
+                    coreValues.appendChild(li);
+                });
+            });
+    </script>
+</body>
+</html>

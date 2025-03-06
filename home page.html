@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Домашняя страница</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #dad7cd;
+            color: #1c3226;
+            height: 100%;
+            
+        }
+        header {
+            background: #344e41;
+            color: white;
+            padding: 5px;
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 15px;
+            display: inline-block;
+            transition: background 0.3s;
+        }
+        nav ul li a:hover {
+            background: #1b2b23;
+            border-radius: 5px;
+        }
+        main {
+            padding: 40px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+        }
+        .card {
+            background: white;
+            padding: 40px;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 600px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #344e41;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background: #182a21;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #344e41;
+            color: white;
+            margin-top: 20px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="home page.html">Домашняя</a></li>
+                <li><a href="product page.html">Продукт</a></li>
+                <li><a href="pricing page.html">Цены</a></li>
+                <li><a href="team page.html">Команда</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <main>
+        <section class="card">
+            <h2>Our product</h2>
+            <p>"We bring you a seamless and powerful API experience, designed to elevate your business. Whether you're a startup or an enterprise, our AI-driven APIs provide top-tier solutions for chatbots, image recognition, and creative design. Let’s build the future together!"</p>
+            <a href="product page.html" class="btn">Learn more!</a>
+        </section>
+        <section class="card">
+            <h2>Цены</h2>
+            <p>"We offer transparent, flexible pricing to suit businesses of all sizes. No hidden fees, no surprises – just pure AI power at your fingertips!"</p>
+            <a href="pricing page.html" class="btn">Check Pricing</a>
+        </section>
+    </main>
+    <footer>
+        <p>&copy;  2025 Our Website. All rights reserved.</p>
+    </footer>
+</body>
+</html>
